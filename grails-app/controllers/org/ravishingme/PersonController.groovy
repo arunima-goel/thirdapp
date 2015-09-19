@@ -6,8 +6,7 @@ class PersonController {
 	
 	@Secured(['ROLE_USER'])
 	def index() {
-		render "<html>Hi there!</html>"
-		//redirect action:"list"
+		redirect action:"list"
 	}
 	
 	def list() {
