@@ -14,4 +14,10 @@ class PersonController {
 		def personList = Person.list();
 		[ personList : personList ]
 	}
+	
+	def show() {
+		log.info("Show person with id");
+		def person = Person.get(params.id);
+		[person : person]
+	}
 }
