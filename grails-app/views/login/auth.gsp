@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'auth.css')}" type="text/css">
 </head>
 <body>
-<facebookAuth:init />
+<oauth:connect provider="facebook" id="facebook-connect-link">Facebook</oauth:connect>
+Logged with facebook?
+<s2o:ifLoggedInWith provider="facebook">yes</s2o:ifLoggedInWith>
+<s2o:ifNotLoggedInWith provider="facebook">no</s2o:ifNotLoggedInWith>
 <div id='login'>
     <div class='inner'>
         <div class='fheader'><g:message code="springSecurity.login.header"/></div>
@@ -13,7 +16,6 @@
         <g:if test='${flash.message}'>
             <div class='login_message'>${flash.message}</div>
         </g:if>
-		<facebookAuth:connect permissions="email,user_about_me,publish_stream"/>
         <form action='${postUrl}' method='POST' id='loginForm' class='cssform pure-form pure-form-aligned' autocomplete='off'>
             <p>
                 <label for='username'><g:message code="springSecurity.login.username.label"/>:</label>

@@ -193,8 +193,33 @@ elasticSearch {
 	searchableProperty.name = 'searchable'
 }
 
-
-
-grails.plugin.springsecurity.facebook.domain.classname='org.ravishingme.domain.FacebookUser'
-grails.plugin.springsecurity.facebook.appId='1672109019699805'
-grails.plugin.springsecurity.facebook.secret='8a9c57e53f3e37a96427dbabb2fe3bed'
+oauth {
+	providers {
+	  facebook {
+		api = org.scribe.builder.api.FacebookApi
+		key = '1672109019699805'
+		secret = '8a9c57e53f3e37a96427dbabb2fe3bed'
+		scope = 'email,publish_actions,user_birthday'
+		successUri = 'http://localhost:8080/thirdapp/person/loginSuccess'
+		failureUri = '/oauth/facebook/error'
+		callback = "http://localhost:8080/thirdapp/person/loginSuccess"
+	  }
+	}
+  }
+//oauth {
+//	providers {
+//		facebook {
+//			api = org.scribe.builder.api.FacebookApi
+//
+//			key = '167210901969980'
+//			secret = '8a9c57e53f3e37a96427dbabb2fe3bed'
+//
+//			scope = 'email,read_stream,publish_actions,user_birthday,publish_stream'
+//
+//			callback = "http://localhost:8080/thirdapp/oauth/facebook/callback"   //callback to oauth controller of oauth plugin
+//
+//			successUri = "http://localhost:8080/thirdapp/oauthCallBack/facebookSuccess"
+//			failureUri = "http://localhost:8080/thirdapp/oauthCallBack/facebookFailure"
+//		}
+//	}
+//}

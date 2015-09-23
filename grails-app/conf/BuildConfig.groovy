@@ -63,7 +63,7 @@ grails.project.dependency.resolution = {
         compile ":asset-pipeline:2.1.5"
 		compile ":spring-security-core:2.0-RC5"
 		compile ":mongodb:3.0.0"
-		compile ":spring-security-facebook:0.17"
+		compile ":spring-security-oauth-facebook:0.2"
 		
         // plugins needed at runtime but not for compilation
         runtime ":jquery:1.11.1"
