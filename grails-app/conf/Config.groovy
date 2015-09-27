@@ -129,10 +129,8 @@ grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'org.ravishingm
 grails.plugin.springsecurity.authority.className = 'org.ravishingme.Role'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
-	'/index':           ['permitAll'],
-	'/index.gsp':       ['permitAll'],
-	'/list':			['ROLE_USER'],
-	'/list.gsp':		['ROLE_USER'],
+	'/index':           ['ROLE_USER'],
+	'/index.gsp':       ['ROLE_USER'],
 	'/assets/**':       ['permitAll'],
 	'/**/js/**':        ['permitAll'],
 	'/**/css/**':       ['permitAll'],
@@ -193,8 +191,3 @@ elasticSearch {
 	searchableProperty.name = 'searchable'
 }
 
-
-
-grails.plugin.springsecurity.facebook.domain.classname='org.ravishingme.domain.FacebookUser'
-grails.plugin.springsecurity.facebook.appId='1672109019699805'
-grails.plugin.springsecurity.facebook.secret='8a9c57e53f3e37a96427dbabb2fe3bed'
