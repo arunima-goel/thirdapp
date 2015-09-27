@@ -1,10 +1,10 @@
 package org.ravishingme
 
-import grails.plugin.springsecurity.annotation.Secured;
+//import grails.plugin.springsecurity.annotation.Secured;
 
 class PersonController {
 	
-	@Secured(['ROLE_USER'])
+	//@Secured(['ROLE_USER'])
 	def index() {
 		redirect action:"list"
 	}

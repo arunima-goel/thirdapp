@@ -191,3 +191,15 @@ elasticSearch {
 	searchableProperty.name = 'searchable'
 }
 
+oauth {
+	providers {
+		facebook {
+			api = org.scribe.builder.api.FacebookApi
+			key = '1672109019699805'
+			secret = '8a9c57e53f3e37a96427dbabb2fe3bed'
+			successUri = 'http://localhost:8080/thirdapp/oauthCallback/success'
+			failureUri = 'http://localhost:8080/thirdapp/oauthCallback/error'
+			callback = "http://localhost:8080/thirdapp/oauth/facebook/callback"
+		}
+	}
+}
